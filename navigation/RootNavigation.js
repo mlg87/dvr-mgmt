@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, StatusBar, View } from 'react-native';
 import { Notifications } from 'expo';
 // import {
 //   StackNavigation,
@@ -15,9 +15,10 @@ import {
   Container,
 } from 'native-base';
 
-import Routes from './Routes';
-import HomeScreen from '../screens/HomeScreen';
 import styles from '../styles/rootNavigation';
+import Routes from './Routes';
+import MainTabs from './MainTabs';
+import HomeScreen from '../screens/HomeScreen';
 import Alerts from '../constants/Alerts';
 import registerForPushNotificationsAsync
   from '../api/registerForPushNotificationsAsync';
@@ -35,7 +36,7 @@ const Navigator = StackNavigator({
     headerBackTitle: null,
     headerTintColor: 'blue',
     headerTitleStyle: {
-      fontFamily: 'open-sans',
+      fontFamily: 'space-mono',
       fontSize: 20,
       color: 'white',
     },
@@ -63,6 +64,7 @@ export default class RootNavigation extends React.Component {
       <Container>
         <StatusBar barStyle="light-content" />
         <Navigator />
+        <MainTabs />
       </Container>
     );
   }

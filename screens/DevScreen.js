@@ -12,7 +12,7 @@ const DevScreen = (props) => {
   return (
     <View>
       <Text>Welcome to Dev</Text>
-      <Text>Route: { route }</Text>
+      <Text>Route: { path }</Text>
     </View>
   );
 };

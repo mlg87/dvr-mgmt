@@ -7,10 +7,13 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { inject, observer } from 'mobx-react/native';
 
-import styles from '../styles/home';
+import MainTabs from '../navigation/MainTabs'
 import { MonoText } from '../components/StyledText';
+import styles from '../styles/home';
 
+@inject(['games']) @observer
 export default class HomeScreen extends React.Component {
   static route = {
     navigationBar: {
@@ -55,10 +58,10 @@ export default class HomeScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={ styles.container }>
         <ScrollView
-          style={styles.container}
-          contentContainerStyle={styles.contentContainer}>
+          style={ styles.container }
+          contentContainerStyle={ styles.contentContainer }>
 
           <View style={styles.welcomeContainer}>
             <Image
@@ -100,7 +103,7 @@ export default class HomeScreen extends React.Component {
           </View>
         </ScrollView>
 
-        <View style={styles.tabBarInfoContainer}>
+        {/* <View style={styles.tabBarInfoContainer}>
           <Text style={styles.tabBarInfoText}>
             This is a tab bar. You can edit it in:
           </Text>
@@ -111,6 +114,10 @@ export default class HomeScreen extends React.Component {
               navigation/RootNavigation.js
             </MonoText>
           </View>
+        </View> */}
+
+        <View>
+          <MainTabs />
         </View>
       </View>
     );

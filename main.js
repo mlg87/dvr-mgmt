@@ -6,9 +6,8 @@ import {
   View,
 } from 'react-native';
 // import { NavigationProvider, StackNavigation } from '@expo/ex-navigation';
-import {
-  StackNavigator,
-} from 'react-navigation';
+import { StackNavigator } from 'react-navigation';
+import { FontAwesome } from '@expo/vector-icons';
 import { Provider } from 'mobx-react/native';
 
 import RootNavigation from './navigation/RootNavigation';
@@ -57,8 +56,8 @@ class AppContainer extends React.Component {
       await cacheAssetsAsync({
         images: [require('./assets/images/expo-wordmark.png')],
         fonts: [
-          // FontAwesome.font,
-          // { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
+          FontAwesome.font,
+          { 'space-mono': require('./assets/fonts/SpaceMono-Regular.ttf') },
         ],
       });
 
